@@ -144,7 +144,9 @@ export default class MQTT {
         const stateData: Zigbee2MQTTAPI['bridge/state'] = {state: 'online'};
 
         await this.publish('bridge/state', JSON.stringify(stateData), {retain: true, qos: 0});
-        await this.subscribe(`${settings.get().mqtt.base_topic}/#`);
+        // await this.subscribe(`${settings.get().mqtt.base_topic}/#`);
+        await this.subscribe(`${settings.get().mqtt.base_topic}/+/set`);
+
     }
 
     @bind public onMessage(topic: string, message: Buffer): void {
