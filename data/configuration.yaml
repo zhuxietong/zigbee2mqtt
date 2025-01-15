@@ -30,6 +30,9 @@ mqtt:
 #     port: /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00
 #     # Adapter type, allowed values: `zstack`, `ember`, `deconz`, `zigate` or `zboss`
 #     adapter: zstack
+serial:
+    port: '/dev/ttyUSB0'
+    adapter: 'zstack'
 
 # Periodically check whether devices are online/offline
 # availability:
